@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries Data</title>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+
+    <!-- Importing Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&family=Oxygen:wght@300&
+        family=Quicksand:wght@500&family=Signika+Negative:wght@300&family=Zilla+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css -->
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #4d4848;
+      }
+
+      body {
+        background: rgba(0, 0, 0, 0.938);
+      }
+
+      .grid-container {
+        margin: 0px 12px;
+        /* border: 3px solid purple; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .container {
+        /* display: ; */
+        width: 90%;
+        height: 100vh;
+        margin: 0px 22px;
+      }
+      .container2 {
+        margin: 0px 22px;
+        width: 90%;
+        height: 100vh;
+      }
+      .container3 {
+        margin: 0px 22px;
+        width: 90%;
+        height: 100vh;
+      }
+
+      /*Main Content*/
+
+      .card {
+        overflow: hidden;
+        width: 308px;
+        height: 400px;
+        margin: 100px auto;
+        position: relative;
+        border: 2px solid rgba(15, 15, 15, 0);
+        background: #1e1b1b9e;
+        border-width: 2px;
+        border-style: solid;
+        transition: all 0.3s;
+        border-radius: 20px;
+      }
+
+      /* China card */
+
+      .special2 {
+        transform: scale(1.1);
+      }
+      .special2:hover {
+        transform: scale(1.19) !important;
+      }
+
+      .special2::before {
+        content: '' !important;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 1px;
+        height: 390px;
+        background: linear-gradient(to top, #ac1c175b, #d6c80083) !important;
+
+        z-index: 2;
+      }
+      .special2::after {
+        content: '' !important;
+        position: absolute;
+        top: 0;
+        right: 1px;
+        width: 1px;
+        height: 390px;
+        border-radius: 16px;
+        background: linear-gradient(to top, #ac1c175b, #d6c80083) !important;
+
+        z-index: 2;
+      }
+
+      /* Afganistan card  */
+
+      .special3::before {
+        content: '' !important;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 1px;
+        height: 390px;
+        background: linear-gradient(to top, #2aaf1e62, #b1031794) !important;
+
+        z-index: 2;
+      }
+      .special3::after {
+        content: '' !important;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 1px;
+        height: 390px;
+        border-radius: 16px;
+        background: linear-gradient(to top, #2aaf1e8a, #b103177e) !important;
+
+        z-index: 2;
+      }
+
+      /* Transitions Effect  Starts*/
+
+      .card:hover {
+        transform: scale(1.12);
+        cursor: pointer;
+      }
+
+      .card:hover .para-text {
+        color: rgba(245, 245, 245, 0.479);
+      }
+
+      .card:hover .head-text {
+        color: rgba(255, 255, 255, 0.24);
+      }
+
+      .card:hover .card-img::before {
+        background: linear-gradient(
+          to top,
+          rgba(5, 5, 5, 0.596),
+          rgba(0, 214, 143, 0)
+        );
+      }
+
+      /* Transtions Effect Ends*/
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 2px;
+        width: 1px;
+        height: 390px;
+        background: linear-gradient(
+          to top,
+          rgb(5, 5, 5),
+          rgba(0, 214, 143, 0.836)
+        );
+
+        z-index: 2;
+      }
+      .card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 1px;
+        width: 1px;
+        height: 390px;
+        border-radius: 16px;
+        background: linear-gradient(
+          to top,
+          rgb(5, 5, 5),
+          rgba(0, 214, 143, 0.836)
+        );
+
+        z-index: 2;
+      }
+
+      .main-img {
+        transition: all 0.4s;
+        box-shadow: 6px 6px 12px #00000073;
+        overflow: hidden;
+        border-radius: 10px;
+        transform: scale(0.78);
+        width: 310px;
+      }
+
+      .card-img {
+        transition: all 0.4s;
+        overflow: hidden;
+      }
+
+      .card-img::before {
+        content: '';
+        width: 310px;
+        height: 191px;
+        border-radius: 10px;
+        transform: scale(0.78);
+        position: absolute;
+        top: -2.3px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        background: linear-gradient(
+          to right,
+          rgb(5, 5, 5),
+          rgba(35, 41, 39, 0.432)
+        );
+        z-index: 22;
+      }
+
+      .header {
+        line-height: 32px;
+        font-family: 'Bitter';
+        text-align: center;
+        font-weight: bolder;
+      }
+
+      .header h3 {
+        color: rgba(255, 255, 255, 0.24);
+      }
+
+      /* Card Data */
+
+      .card-content {
+        background: rgba(39, 38, 38, 0.034);
+        border-radius: 12px;
+        width: 296px;
+        height: 130px;
+        margin: 10px auto;
+        padding-top: 10px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .head-text {
+        transition: 0.2s;
+        font-family: 'Signika Negative';
+        font-weight: bolder;
+      }
+
+      .para-text {
+        transition: 0.2s;
+        font-family: 'Oxygen';
+        font-weight: bold;
+      }
+
+      /* All headings  */
+
+      .headings {
+        position: absolute;
+        left: 33px;
+        top: 12px;
+        margin: 3px 0px;
+        width: 100px;
+        height: 120px;
+      }
+
+      /* All api data */
+
+      .paras {
+        position: absolute;
+        right: 50px;
+        top: 12px;
+        width: 70px;
+        height: 120px;
+      }
+
+      /* Loading animations */
+
+      .preloader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black url('/1291107.gif') no-repeat center/292px;
+        z-index: 2244;
+      }
+
+      /* Gradient Text */
+
+      /* Credits:https://fossheim.io/writing/posts/css-text-gradient/ */
+
+      .loader {
+        font-size: 1.32rem;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        transform: translateY(12px);
+        font-family: 'Quicksand';
+        background-color: red;
+
+        /* Create the gradient. */
+        background-image: linear-gradient(45deg, #1ecfdb, #e6380d);
+
+        /* Set the background size and repeat properties. */
+        background-size: 100%;
+        background-repeat: repeat;
+
+        /* Use the text as a mask for the background. */
+        /* This will show the gradient as a text color rather than element bg. */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+      }
+
+      /* Media Queries  */
+
+      @media only screen and (max-width: 1090px) {
+        .grid-container {
+          margin: 0px 0px;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .container {
+          width: 90%;
+          height: 75vh;
+          margin: 0px 7px;
+        }
+        .container2 {
+          margin: 0px 7px;
+          width: 90%;
+          height: 75vh;
+        }
+        .container3 {
+          margin: 0px 7px;
+          width: 90%;
+          height: 75vh;
+        }
+
+        .special2 {
+          transform: scale(1);
+        }
+
+        .special2:hover {
+          transform: scale(1.1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="grid-container">
+      <section class="container">
+        <div class="preloader" onload="removeloader()">
+          <h3 class="loader">Loading......</h3>
+        </div>
+      </section>
+
+      <section class="container2"></section>
+      <section class="container3"></section>
+    </section>
+
+    <!-- Javascript -->
+
+    <script>
+      let request = new XMLHttpRequest();
+      request.open('GET', 'https://restcountries.com/v2/name/pakistan');
+      request.send();
+
+      //......Targetting all classes of container.......//
+
+      let container = document.querySelector('.container');
+      let container2 = document.querySelector('.container2');
+      let container3 = document.querySelector('.container3');
+
+      //....Getting 1st card data by Xml https request..//
+
+      request.addEventListener('load', function () {
+        //Converting api data into an object
+
+        let [data] = JSON.parse(this.responseText);
+        //Targeting Currency from an array
+
+        let dataCurr = data.currencies[0].code;
+
+        //Putting all html in a varibale
+
+        let htmlData = ` <div class="card">
+          <div class="card-img">
+            <img src="/flag.jpg" alt="Pakistan-flag" class="main-img" />
+            </div>
+            <div class="card-body">
+              <div class="header">
+                <h3>Pakistan</h3>
+                </div>
+                <article class="card-content">
+                  <div class="headings">
+                    <span class="head-text"> Population</span>
+                    <span class="head-text">Capital</span><br>
+                    <span class="head-text">ISO Code</span>
+                    <span class="head-text">Continent</span>
+                    <span class="head-text">Alpha-Code</span>
+               </div>
+               <div class="paras">
+                <span class="para-text">${data.population}</span>
+                <span class="para-text">${data.capital}</span>
+                <span class="para-text">${dataCurr}</span><br>
+                <span class="para-text">${data.continent}</span><br>
+                <span class="para-text">${data.alpha2Code}</span>
+                </div>
+                </article>
+                </div>
+                </div>`;
+
+        container.innerHTML = htmlData;
+      });
+      //..................//
+
+      // Request2 for 2nd card (China)
+
+      let request2 = new XMLHttpRequest();
+      request2.open('GET', 'https://restcountries.com/v2/name/china');
+      request2.send();
+
+      request2.addEventListener('load', function () {
+        let [data2] = JSON.parse(this.responseText);
+
+        let dataCurr = data2.currencies[0].code;
+        let htmlData2 = ` <div class="card special2">
+          <div class="card-img">
+            <img src="/flag2.jpg" alt="China-flag" class="main-img" />
+            </div>
+            <div class="card-body">
+              <div class="header">
+                <h3>China</h3>
+                </div>
+                <article class="card-content">
+                  <div class="headings">
+                    <span class="head-text"> Population</span>
+                    <span class="head-text">Capital</span> <br>
+                    <span class="head-text">ISO Code</span> <br>
+                    <span class="head-text">Continent</span> <br>
+                    <span class="head-text">Alpha-Code</span> 
+               </div>
+               <div class="paras">
+                <span class="para-text">${data2.population}</span>
+                <span class="para-text">${data2.capital}</span> 
+                <span class="para-text">${dataCurr}</span><br>
+                <span class="para-text">${data2.continent}</span><br>
+                <span class="para-text">${data2.alpha2Code}</span>
+                </div>
+                </article>
+                </div>
+                </div>`;
+
+        container2.innerHTML = htmlData2;
+      });
+
+      // Request3 for 2nd card (Afganistan)
+
+      let request3 = new XMLHttpRequest();
+      request3.open('GET', 'https://restcountries.com/v2/name/afganistan');
+      request3.send();
+      request3.addEventListener('load', function () {
+        let [data3] = JSON.parse(this.responseText);
+
+        let dataCurr = data3.currencies[0].code;
+
+        let htmlData3 = ` <div class="card special3">
+          <div class="card-img">
+            <img src="/flag3.jpg" alt="Pakistan-flag" class="main-img" />
+            </div>
+            <div class="card-body">
+              <div class="header">
+                <h3>Afghanistan</h3>
+                </div>
+                <article class="card-content">
+                  <div class="headings">
+                    <span class="head-text"> Population</span>
+                    <span class="head-text">Capital</span><br>
+                    <span class="head-text">ISO Code</span>
+                    <span class="head-text">Continent</span>
+                    <span class="head-text">Alpha-Code</span>
+               </div>
+               <div class="paras">
+                <span class="para-text">${data3.population}</span>
+                <span class="para-text">${data3.capital}</span>
+                <span class="para-text">${dataCurr}</span><br>
+                <span class="para-text">${data3.continent}</span><br>
+                <span class="para-text">${data3.alpha2Code}</span>
+                </div>
+                </article>
+                </div>
+                </div>`;
+
+        container3.innerHTML = htmlData3;
+      });
+
+      //Removing Loader on content load
+
+      let preloader = document.querySelector('.preloader');
+
+      const removerLoader = () => {
+        preloader.style.opacity = 0;
+      };
+    </script>
+  </body>
+</html>
